@@ -1,11 +1,16 @@
 <?php
 // Conectar ao banco de dados
-$servername = "localhost";
+$servername = "23.111.140.162";
 $username = "basefort_basefort";
 $password = "Jc.160574_@";
 $dbname = "basefort_banco";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+try{
+    $conn = new mysqli($servername, $username, $password, $dbname);
+ }
+ catch{
+    MessageBox.Show("Não estabeleceu conexão com o banco de dados");
+ }
 
 // Verificar a conexão
 if ($conn->connect_error) {
