@@ -84,30 +84,53 @@
         <h2>Seja um de nossos distribuidores</h2>
     </div>
     <form class="row g-3 needs-validation novalidate" action="valida.php" method="post">
-        <div class="col-6">
-            <label class="form-label">Empresa:</label>
-            <input type="text" class="form-control">
+      <div class="col-6">
+        <label for="empresa" class="form-label">Empresa:</label>
+        <input type="text"
+        class="form-control"
+        id="empresa"
+        name="empresa"
+        placeholder="Nome da Empresa">
+    </div>
+
+          <div class="col-md-2">
+            <label for="cnpj" class="form-label">CNPJ:</label>
+            <input type="text"
+            class="form-control"
+            id="cnpj"
+            name="cnpj"
+            placeholder="00.000.000/0000-00"
+            pattern="[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}-[0-9]{2}"
+            required>
           </div>
 
           <div class="col-6">
-            <label class="form-label">CNPJ:</label>
-            <input type="text" class="form-control">
-          </div>
-
-        <div class="col-6">
-          <label for="inputAddress1" class="form-label">Endereço:</label>
-          <input type="text" class="form-control" id="inputAddress1">
+            <label for="inputAddress1" class="form-label">Endereço:</label>
+            <input type="text"
+            class="form-control"
+            id="inputAddress1"
+            name="endereco"
+            placeholder="Rua, Avenida">
         </div>
 
         <div class="col-6">
           <label for="inputAddress2" class="form-label">Complemento:</label>
-          <input type="text" class="form-control" id="inputAddress2">
+          <input type="text"
+          class="form-control"
+          id="inputAddress2"
+          name="complemento"
+          placeholder="Sala, Galpão">
         </div>
 
         <div class="col-md-6">
           <label for="inputCity" class="form-label">Cidade:</label>
-          <input type="text" class="form-control" id="inputCity">
-        </div>
+          <input type="text"
+          class="form-control"
+          id="inputCity"
+          name="cidade"
+          placeholder="Informe a cidade">
+      </div>
+      
 
         <div class="col-md-4">
           <label for="inputState" class="form-label">Estado:</label>
@@ -144,15 +167,23 @@
 
         <div class="col-md-2">
           <label for="inputZip" class="form-label">CEP:</label>
-          <input type="text" class="form-control">
-        </div>
+          <input type="text"
+          class="form-control"
+          id="inputZip"
+          name="cep"
+          placeholder="12345-678">
+      </div>
         
-        <div class="col-md-6">
-            <label for="e-mail" class="form-label">E-mail:</label>
-            <input type="email" class="form-control" id="e-mail" placeholder="name@example.com">
-          </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">E-mail:</label>
+        <input type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="name@example.com">
+    </div>
 
-          <div class="col-md-3">
+          <div class="col-md-2">
             <label for="telefone"
             class="form-label">Telefone:</label>
             <input type="tel"

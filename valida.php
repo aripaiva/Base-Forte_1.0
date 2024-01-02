@@ -1,7 +1,7 @@
 <?php
 // Conectar ao banco de dados
 $servername = "23.111.140.162";
-$username = "basefort_basefort";
+$username = "basefort_junior";
 $password = "Jc.160574_@";
 $dbname = "basefort_banco";
 
