@@ -1,9 +1,9 @@
 <?php
-// Conectar ao banco de dados (substitua os valores pelos seus)
-$servername = "23.111.140.162";
-$username = "basefort";
-$password = "x8[rCX!Bi53kY0";
-$dbname = "seu_banco_de_dados";
+// Conectar ao banco de dados
+$servername = "localhost";
+$username = "basefort_basefort";
+$password = "Jc.160574_@";
+$dbname = "basefort_banco";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -29,6 +29,7 @@ $cidade = validar_dados($_POST['cidade']);
 $estado = validar_dados($_POST['estado']);
 $cep = validar_dados($_POST['cep']);
 $email = validar_dados($_POST['email']);
+$email = validar_dados($_POST['telefone']);
 
 // Inserir dados no banco de dados usando prepared statement
 $stmt = $conn->prepare("INSERT INTO clientes (empresa, cnpj, endereco, complemento, cidade, estado, cep, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
