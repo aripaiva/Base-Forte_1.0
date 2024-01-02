@@ -213,7 +213,7 @@
             <p class="secundary-color">Inscreva-se</p>
             <form>
               <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Digite o seu E-mail">
+                <input type="email" class="form-control" placeholder="Digite seu E-mail">
               </div>
              <button class="btn btn-dark" type="submit">
               <a class="inscrever" href="cadastro.html"> Inscrever </a></button>
@@ -267,6 +267,69 @@
     </div>
   </div>
 </footer><!--Fim Footer-->
+
+<div id="cookie-banner" class="cookie-banner">
+  <p>Este site utiliza cookies. Ao continuar a navegar no site, você concorda com o uso de cookies.</p>
+  <button id="accept-cookies">Aceitar</button>
+  <button id="reject-cookies">Recusar</button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      var cookieBanner = document.getElementById('cookie-banner');
+      var acceptCookiesBtn = document.getElementById('accept-cookies');
+      var rejectCookiesBtn = document.getElementById('reject-cookies');
+
+      // Função para definir um cookie
+      function setCookie(name, value, days) {
+          var expires = '';
+          if (days) {
+              var date = new Date();
+              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+              expires = '; expires=' + date.toUTCString();
+          }
+          document.cookie = name + '=' + value + expires + '; path=/';
+      }
+
+      // Função para obter o valor de um cookie por nome
+      function getCookie(name) {
+          var nameEQ = name + '=';
+          var cookies = document.cookie.split(';');
+          for (var i = 0; i < cookies.length; i++) {
+              var cookie = cookies[i];
+              while (cookie.charAt(0) === ' ') {
+                  cookie = cookie.substring(1, cookie.length);
+              }
+              if (cookie.indexOf(nameEQ) === 0) {
+                  return cookie.substring(nameEQ.length, cookie.length);
+              }
+          }
+          return null;
+      }
+
+      // Função para mostrar ou ocultar o banner de cookies com base na escolha do usuário
+      function checkCookies() {
+          if (getCookie('cookiesAccepted') !== 'true') {
+              cookieBanner.style.display = 'block';
+          }
+      }
+
+      // Aceitar cookies
+      acceptCookiesBtn.addEventListener('click', function () {
+          setCookie('cookiesAccepted', 'true', 365);
+          cookieBanner.style.display = 'none';
+      });
+
+      // Recusar cookies
+      rejectCookiesBtn.addEventListener('click', function () {
+          setCookie('cookiesAccepted', 'false', 365);
+          cookieBanner.style.display = 'none';
+      });
+
+      // Verificar os cookies ao carregar a página
+      checkCookies();
+  });
+</script>
 
 </body>
 </html>
