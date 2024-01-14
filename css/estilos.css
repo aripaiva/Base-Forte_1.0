@@ -274,14 +274,17 @@ h6 {
 
 /* Videos
 -----------*/
-.videos {
+#videos {
 	margin-top: 30px;
 	margin-bottom: 30px;
+	
 }
 
-@media (min-width: 576px) {
-	.videos {
-		margin-right: 100px;
+@media (max-width: 576px) {
+	#videos {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		
 	}	
 }
 @media (min-width: 576px) {
