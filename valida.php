@@ -39,7 +39,11 @@ $email = isset($_POST['email']) ? validar_dados($_POST['email']) : '';
 $telefone = isset($_POST['telefone']) ? validar_dados($_POST['telefone']): '';
 
 // Inserir dados no banco de dados usando prepared statement
-$stmt = $link->prepare("INSERT INTO clientes (empresa, cnpj, endereco, complemento, cidade, estado, cep, email, telefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $link->prepare("INSERT INTO clientes (empresa, cnpj, endereco, complemento, cidade, estado, cep, email, telefone)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+if($stmt) {
+
 $stmt->bind_param("sssssssss", $empresa, $cnpj, $endereco, $complemento, $cidade, $estado, $cep, $email, $telefone);
 
 // Executar a declaração preparada
@@ -50,7 +54,7 @@ if ($stmt->execute()) {
     $destinatario = "vendas@baseforte.net.com";
     $assunto = "Novo Cliente Cadastrado";
     
-    $mensagem = "Novo cliente cadastrado:\n\n";
+    $$mensagem = "Novo cliente cadastrado:\n\n";
     $mensagem .= "Empresa: $empresa\n";
     $mensagem .= "CNPJ: $cnpj\n";
     $mensagem .= "Endereço: $endereco\n";
@@ -68,7 +72,12 @@ if ($stmt->execute()) {
     exit();
     
 } else {
-    echo "Erro: " . $stmt->error;
+    echo "Erro na execução: " . $stmt->error;
+}
+
+
+} else {
+    echo "Erro na preparação: " . $link->error;
 }
 
 // Fechar a conexão
