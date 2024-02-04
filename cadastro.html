@@ -83,7 +83,7 @@
     <div class="text-center cadastro">
         <h2>Seja um de nossos distribuidores</h2>
     </div>
-    <form class="row g-3 needs-validation novalidate" action="valida.php" method="post">
+    <form class="row g-3 needs-validation novalidate" action="valida.php" method="post" enctype="multipart/form-data">
       
       <div class="col-6">
         <label for="empresa" class="form-label">Empresa:</label>
@@ -91,7 +91,8 @@
         class="form-control"
         id="empresa"
         name="empresa"
-        placeholder="Nome da Empresa">
+        placeholder="Nome da Empresa"
+        required>
         </div>
 
           <div class="col-md-2">
@@ -111,7 +112,8 @@
             class="form-control"
             id="inputAddress1"
             name="endereco"
-            placeholder="Rua, Avenida">
+            placeholder="Rua, Avenida"
+            required>
           </div>
 
           <div class="col-6">
@@ -129,7 +131,8 @@
           class="form-control"
           id="inputCity"
           name="cidade"
-          placeholder="Informe a cidade">
+          placeholder="Informe a cidade"
+          required>
           </div>
       
 
@@ -172,7 +175,8 @@
           class="form-control"
           id="inputZip"
           name="cep"
-          placeholder="12345-678">
+          placeholder="12345-678"
+          required>
           </div>
         
           <div class="col-md-6">
@@ -181,7 +185,8 @@
         class="form-control"
         id="email"
         name="email"
-        placeholder="name@example.com">
+        placeholder="name@example.com"
+        required>
           </div>
 
           <div class="col-md-2">
