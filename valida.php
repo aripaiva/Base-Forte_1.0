@@ -80,7 +80,7 @@ if ($stmt) {
 
         // Configurar o restante das opções do PHPMailer conforme necessário
 
-        $mail->setFrom('vendas@baseforte.br', 'Gessica Mara');
+        $mail->setFrom('vendas@baseforte.net.br', 'Gessica Mara');
         $mail->addAddress('vendas@baseforte.net.br', 'Baseforte');
 
         $mail->Subject = 'Novo Cliente Cadastrado';
