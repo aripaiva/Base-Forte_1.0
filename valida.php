@@ -59,7 +59,7 @@ if (empty($empresa) || empty($cnpj) || empty($endereco) || empty($cidade) || emp
 }
 
 // Inserir dados no banco de dados usando prepared statement
-$stmt = $link->prepare("INSERT INTO clientes (empresa, cnpj, endereco, cidade, estado, cep, email, telefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt = $link->prepare("INSERT INTO clientes (empresa, cnpj, endereco, complemento, cidade, estado, cep, email, telefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 if ($stmt) {
     $stmt->bind_param("sssssssss", $empresa, $cnpj, $endereco, $complemento, $cidade, $estado, $cep, $email, $telefone);
@@ -120,6 +120,7 @@ if ($stmt) {
 // Fechar a conexão
 $stmt->close();
 $link->close();
+
 ?>
 
 
